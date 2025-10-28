@@ -52,7 +52,7 @@ function About() {
             <span
               key={index}
               className={`inline-block word-fade-in ${
-                word.highlight ? 'font-bold text-[#F8E71C]' : ''
+                word.highlight ? 'font-bold text-[#E6ff2b]' : ''
               } ${isVisible ? 'animate' : ''}`}
               style={{
                 animationDelay: `${index * 120}ms`

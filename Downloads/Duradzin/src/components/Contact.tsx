@@ -74,7 +74,7 @@ function Contact() {
               <div className="block">for your target</div>
               <div className="block">audience?</div>
             </h1>
-            <p className="text-2xl md:text-3xl font-bold text-[#F8E71C]">
+            <p className="text-2xl md:text-3xl font-bold text-[#E6ff2b]">
               Let's make it a reality!
             </p>
           </div>
@@ -91,7 +91,7 @@ function Contact() {
                     placeholder="Your Name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#F8E71C] transition-colors"
+                    className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#E6ff2b] transition-colors"
                   />
                 </div>
                 <div>
@@ -101,7 +101,7 @@ function Contact() {
                     placeholder="Your Organization's Name"
                     value={formData.organization}
                     onChange={handleInputChange}
-                    className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#F8E71C] transition-colors"
+                    className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#E6ff2b] transition-colors"
                   />
                 </div>
               </div>
@@ -114,7 +114,7 @@ function Contact() {
                     placeholder="Your Email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#F8E71C] transition-colors"
+                    className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#E6ff2b] transition-colors"
                   />
                 </div>
                 <div>
@@ -124,7 +124,7 @@ function Contact() {
                     placeholder="Your Contact"
                     value={formData.contact}
                     onChange={handleInputChange}
-                    className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#F8E71C] transition-colors"
+                    className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#E6ff2b] transition-colors"
                   />
                 </div>
               </div>
@@ -136,7 +136,7 @@ function Contact() {
                   placeholder="Website / Social Media Link"
                   value={formData.website}
                   onChange={handleInputChange}
-                  className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#F8E71C] transition-colors"
+                  className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#E6ff2b] transition-colors"
                 />
               </div>
 
@@ -147,7 +147,7 @@ function Contact() {
                   rows={4}
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#F8E71C] transition-colors resize-none"
+                  className="w-full bg-transparent border-b border-white text-white placeholder-gray-400 pb-2 focus:outline-none focus:border-[#E6ff2b] transition-colors resize-none"
                 />
               </div>
 
@@ -162,8 +162,8 @@ function Contact() {
                       onClick={() => handleServiceChange(service)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                         formData.services.includes(service)
-                          ? 'bg-[#F8E71C] text-black'
-                          : 'bg-[#1C1C1C] text-white border border-gray-600 hover:border-[#F8E71C]'
+                          ? 'bg-[#E6ff2b] text-black'
+                          : 'bg-[#1C1C1C] text-white border border-gray-600 hover:border-[#E6ff2b]'
                       }`}
                     >
                       {service}
@@ -183,8 +183,8 @@ function Contact() {
                       onClick={() => handleOptionChange('investment', option)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                         formData.investment === option
-                          ? 'bg-[#F8E71C] text-black'
-                          : 'bg-[#1C1C1C] text-white border border-gray-600 hover:border-[#F8E71C]'
+                          ? 'bg-[#E6ff2b] text-black'
+                          : 'bg-[#1C1C1C] text-white border border-gray-600 hover:border-[#E6ff2b]'
                       }`}
                     >
                       {option}
@@ -204,8 +204,8 @@ function Contact() {
                       onClick={() => handleOptionChange('timeline', option)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                         formData.timeline === option
-                          ? 'bg-[#F8E71C] text-black'
-                          : 'bg-[#1C1C1C] text-white border border-gray-600 hover:border-[#F8E71C]'
+                          ? 'bg-[#E6ff2b] text-black'
+                          : 'bg-[#1C1C1C] text-white border border-gray-600 hover:border-[#E6ff2b]'
                       }`}
                     >
                       {option}
@@ -217,7 +217,7 @@ function Contact() {
               {/* Send Button */}
               <button
                 type="submit"
-                className="w-full bg-transparent border-2 border-[#F8E71C] text-[#F8E71C] py-4 px-6 rounded-full font-semibold text-lg hover:bg-[#F8E71C] hover:text-black transition-all duration-300"
+                className="w-full bg-transparent border-2 border-[#E6ff2b] text-[#E6ff2b] py-4 px-6 rounded-full font-semibold text-lg hover:bg-[#E6ff2b] hover:text-black transition-all duration-300"
               >
                 Send →
               </button>

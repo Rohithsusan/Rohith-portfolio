@@ -15,7 +15,7 @@ function Navigation() {
         {!isContactPage && (
           <Link
             to="/contact"
-            className="bg-[#F8E71C] text-black px-6 py-2 rounded-full font-semibold hover:bg-[#e6d519] transition-all duration-300 hover:scale-105"
+            className="bg-[#E6ff2b] text-black px-6 py-2 rounded-full font-semibold hover:bg-[#e6d519] transition-all duration-300 hover:scale-105"
           >
             Let's Talk
           </Link>

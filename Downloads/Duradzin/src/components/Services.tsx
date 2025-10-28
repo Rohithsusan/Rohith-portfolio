@@ -67,7 +67,7 @@ function Services() {
             <h2 className="text-5xl font-bold">Flavors That Define Us</h2>
         
           </div>
-          <button className="text-[#F8E71C] hover:text-white transition-colors duration-300">
+          <button className="text-[#E6ff2b] hover:text-white transition-colors duration-300">
             View all →
           </button>
         </div>

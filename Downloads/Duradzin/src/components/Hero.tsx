@@ -83,7 +83,7 @@ function Hero() {
           <p className="text-gray-400 text-lg max-w-md">
             Crafting digital experiences that push boundaries and redefine what's possible
           </p>
-          <button className="group flex items-center gap-2 text-[#F8E71C] font-semibold text-lg hover:gap-4 transition-all duration-300">
+          <button className="group flex items-center gap-2 text-[#E6ff2b] font-semibold text-lg hover:gap-4 transition-all duration-300">
             Explore our work
             <span className="transform group-hover:translate-x-1 transition-transform">→</span>
           </button>

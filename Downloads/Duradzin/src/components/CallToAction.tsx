@@ -14,7 +14,7 @@ function CallToAction() {
         <div className="pt-8">
           <Link
             to="/contact"
-            className="inline-block bg-[#F8E71C] text-black font-bold py-4 px-12 rounded-full hover:glow-yellow-strong transition-all duration-300 hover:scale-105"
+            className="inline-block bg-[#E6ff2b] text-black font-bold py-4 px-12 rounded-full hover:glow-yellow-strong transition-all duration-300 hover:scale-105"
           >
             Get Started
           </Link>
