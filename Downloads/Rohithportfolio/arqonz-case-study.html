@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arqonz Global – Product Design Case Study | Rohithsusan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --bg: #f5f2ed;
+      --text: #3D2F1F;
+      --text-light: #5a4e3a;
+      --muted: #7a6a5a;
+      --border: #e2dbd0;
+      --btn-bg: #3D2F1F;
+      --btn-text: #fff;
+      --card-bg: #fff;
+      --accent: #2c6e4f;
+    }
+ 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+ 
+    /* Typography */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+ 
+    h1 {
+      font-size: clamp(42px, 8vw, 64px);
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+ 
+    h2 {
+      font-size: clamp(28px, 5vw, 38px);
+      margin: 48px 0 20px 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+ 
+    h2:first-of-type {
+      margin-top: 0;
+    }
+ 
+    h3 {
+      font-size: 22px;
+      margin: 32px 0 16px 0;
+      font-weight: 600;
+    }
+ 
+    p {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 380;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      max-width: 780px;
+    }
+ 
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+ 
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 40px;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: opacity 0.2s;
+    }
+    nav a:hover { opacity: 0.6; }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .back-link:hover {
+      background: var(--btn-bg);
+      color: white;
+      border-color: var(--btn-bg);
+      opacity: 1;
+    }
+ 
+    /* Hero Section */
+    .case-hero {
+      background: linear-gradient(135deg, #e8e2d8 0%, #f5f2ed 100%);
+      padding: 80px 24px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .case-hero .container {
+      max-width: 900px;
+    }
+    .platform-badge {
+      display: inline-block;
+      background: var(--btn-bg);
+      color: white;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+    .figma-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 14px;
+      margin-top: 16px;
+      transition: all 0.2s;
+    }
+    .figma-link:hover {
+      background: var(--btn-bg);
+      color: white;
+      border-color: var(--btn-bg);
+    }
+ 
+    /* Content styling */
+    .case-content {
+      padding: 60px 0 100px;
+    }
+    .case-content p {
+      max-width: 780px;
+    }
+    .insight-box {
+      background: var(--card-bg);
+      border-left: 4px solid var(--accent);
+      padding: 28px 32px;
+      margin: 40px 0;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .insight-box p {
+      margin-bottom: 0;
+      font-style: normal;
+      font-weight: 450;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin: 40px 0;
+    }
+    .user-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .user-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+    .user-card p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    .design-goals {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 30px 0;
+    }
+    .goal-tag {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 60px;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+    }
+    .process-steps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 32px 0;
+    }
+    .step {
+      flex: 1;
+      min-width: 160px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    .step-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .step h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+    .mockup-showcase {
+      background: #1a1a1a;
+      border-radius: 28px;
+      padding: 40px 20px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .mockup-showcase h3 {
+      color: white;
+      margin-top: 0;
+    }
+    .mockup-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .mini-mock {
+      width: 140px;
+      background: linear-gradient(145deg, #0f3d2e, #1a5c44);
+      border-radius: 20px;
+      padding: 16px 10px;
+      aspect-ratio: 9/16;
+    }
+    .impact-stats {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin: 48px 0;
+      justify-content: center;
+    }
+    .impact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px 28px;
+      text-align: center;
+      flex: 1;
+      min-width: 180px;
+    }
+    .impact-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    hr {
+      margin: 48px 0;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+    .back-to-portfolio {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 12px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      margin-top: 48px;
+      transition: all 0.2s;
+    }
+    .back-to-portfolio:hover {
+      background: var(--btn-bg);
+      color: white;
+      border-color: var(--btn-bg);
+    }
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    ul {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-left: 24px;
+      margin-bottom: 32px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+ 
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .process-steps {
+        flex-direction: column;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      .case-hero {
+        padding: 50px 20px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+ 
+  <nav>
+    <a href="index.html" style="font-weight: 600; font-size: 18px;">Rohithsusan</a>
+    <div class="nav-links">
+      <a href="index.html#work">Portfolio</a>
+      <a href="index.html#expertise">Expertise</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+  </nav>
+ 
+  <div class="case-hero">
+    <div class="container">
+      <span class="platform-badge">END-TO-END PRODUCT DESIGN</span>
+      <h1>Arqonz Global Pvt Ltd</h1>
+      <p style="font-size: 18px; font-weight: 450; max-width: 680px;">End-to-End Product Design for Web, Mobile & SaaS Platform</p>
+      <a href="#" class="figma-link" target="_blank">
+        <span>🎨</span> View Design in Figma →
+      </a>
+    </div>
+  </div>
+ 
+  <div class="case-content">
+    <div class="container">
+      <!-- Overview -->
+      <h2>Overview</h2>
+      <p>Arqonz is a comprehensive platform serving both B2C and B2B markets, requiring a unified yet flexible design system that accommodates different user needs and technical capabilities. My role involved working across the entire product ecosystem — website, mobile application, and SaaS platform — to create cohesive, intuitive experiences that reduce cognitive load and improve usability for diverse user segments.</p>
+ 
+      <!-- Background & Problem -->
+      <h2>Background & Problem</h2>
+      <p>Arqonz needed a design solution that could serve two distinct audiences: non-technical B2C users who required simplicity and guidance, and well-informed B2B users who needed efficiency and advanced functionality. The existing platform struggled with:</p>
+      <ul>
+        <li>High interaction cost and cognitive load for non-technical users</li>
+        <li>Complex navigation that overwhelmed B2C users while limiting B2B users</li>
+        <li>Inconsistent design patterns across web, mobile, and SaaS platforms</li>
+        <li>Lack of clear information hierarchy and visual guidance</li>
+        <li>Difficulty in supporting both user types without compromising either experience</li>
+      </ul>
+ 
+      <!-- Users Two Column -->
+      <h2>Users</h2>
+      <div class="two-col">
+        <div class="user-card">
+          <h4>👥 B2C Users</h4>
+          <p>Non-technical users who needed clear guidance, simple workflows, and visual cues to complete tasks. They preferred step-by-step processes, minimal decision points, and intuitive interfaces that didn't require prior knowledge of the platform.</p>
+        </div>
+        <div class="user-card">
+          <h4>🏢 B2B Users</h4>
+          <p>Business professionals with domain expertise who needed quick access to advanced features, efficient workflows, and comprehensive data visualization. They valued speed, functionality, and the ability to customize their experience.</p>
+        </div>
+      </div>
+ 
+      <div class="insight-box">
+        <p><strong>🔑 Key Challenge:</strong> Designing a single platform that could elegantly serve both user types without creating separate experiences or overwhelming either segment.</p>
+      </div>
+ 
+      <!-- Design Goals -->
+      <h2>Design Goals</h2>
+      <div class="design-goals">
+        <span class="goal-tag">🧠 Reduce Cognitive Load</span>
+        <span class="goal-tag">🧭 Simplify Navigation</span>
+        <span class="goal-tag">✨ Improve Clarity</span>
+        <span class="goal-tag">🪜 Ensure Usability for Low-Tech Users</span>
+        <span class="goal-tag">⚡ Maintain Efficiency for Power Users</span>
+        <span class="goal-tag">🎯 Create Consistency</span>
+      </div>
+ 
+      <!-- Process -->
+      <h2>Process</h2>
+      <div class="process-steps">
+        <div class="step"><div class="step-number">01</div><h4>Research</h4><p>Business meetings, interviews & usage analysis</p></div>
+        <div class="step"><div class="step-number">02</div><h4>Wireframing</h4><p>IA mapping, user flows & low-fidelity layouts</p></div>
+        <div class="step"><div class="step-number">03</div><h4>Design System</h4><p>Typography, color, components & patterns</p></div>
+        <div class="step"><div class="step-number">04</div><h4>Prototyping</h4><p>Interactive prototypes & stakeholder demos</p></div>
+        <div class="step"><div class="step-number">05</div><h4>Testing</h4><p>Usability sessions with B2C & B2B users</p></div>
+      </div>
+ 
+      <p><strong>Research:</strong> I attended business meetings with clients to understand their requirements, pain points, and expectations. I conducted user interviews, analyzed existing usage patterns, and identified key friction points in the current experience. This research informed the design strategy and helped prioritize features based on user needs.</p>
+      <p><strong>Wireframing:</strong> I created low-fidelity wireframes to map out information architecture and user flows. The wireframes focused on simplifying navigation paths, reducing steps in critical workflows, and establishing clear visual hierarchy.</p>
+      <p><strong>Design System:</strong> I developed a comprehensive design system that ensured consistency across web, mobile, and SaaS platforms. The system included typography scales, color palettes, spacing guidelines, component libraries, and interaction patterns.</p>
+ 
+      <!-- Mockup visual -->
+      <div class="mockup-showcase">
+        <h3 style="color: white;">Final UI Directions</h3>
+        <div class="mockup-row">
+          <div class="mini-mock"></div>
+          <div class="mini-mock" style="background: linear-gradient(145deg, #1a5c44, #0f3d2e);"></div>
+          <div class="mini-mock" style="background: linear-gradient(145deg, #2c6e4f, #1a5c44);"></div>
+        </div>
+        <p style="color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 20px;">Clean, minimal interfaces with clear visual hierarchy</p>
+      </div>
+ 
+      <h2>Key Improvements</h2>
+      <ul>
+        <li><strong>Simplified Navigation:</strong> Reduced primary navigation items and adaptive secondary patterns</li>
+        <li><strong>Progressive Disclosure:</strong> Shows essential features first, advanced options on demand</li>
+        <li><strong>Visual Hierarchy:</strong> Typography, spacing, and color guide user attention</li>
+        <li><strong>Contextual Help:</strong> Inline guidance and tooltips without overwhelming interface</li>
+        <li><strong>Consistent Patterns:</strong> Reusable components across all platforms</li>
+        <li><strong>Responsive & Accessible:</strong> Mobile-first, improved contrast & keyboard navigation</li>
+      </ul>
+ 
+      <h2>Final UI Screens</h2>
+      <p>The final designs featured clean, minimal interfaces with plenty of white space, clear typography, and subtle visual cues. Key screens included: streamlined dashboard with customizable widgets, simplified onboarding flows, clear data visualization, intuitive forms with inline validation, efficient navigation patterns, and consistent component library.</p>
+ 
+      <!-- Impact Stats -->
+      <h2>Impact</h2>
+      <div class="impact-stats">
+        <div class="impact-card"><div class="impact-number">↓40%</div><div>Reduced cognitive load</div></div>
+        <div class="impact-card"><div class="impact-number">+32%</div><div>Task completion rate (B2C)</div></div>
+        <div class="impact-card"><div class="impact-number">+25%</div><div>B2B feature adoption</div></div>
+      </div>
+      <p>The redesigned platform successfully addressed the core challenges: reduced cognitive load through simplified information architecture, improved usability for non-technical users while maintaining efficiency for power users, created a cohesive experience across web, mobile, and SaaS platforms, established a scalable design system that supports future growth, and enhanced user satisfaction through clearer navigation and more intuitive interactions. The design system I created continues to guide product development, ensuring consistency and quality as the platform evolves.</p>
+ 
+      <h2>Learnings</h2>
+      <p>This project taught me the importance of understanding diverse user needs and finding elegant solutions that serve multiple audiences. Key learnings included: User Research is Critical — direct engagement revealed insights assumptions couldn't; Progressive Disclosure Works — layering allows one interface to serve different users; Design Systems Enable Scale — well-defined systems accelerate development; Simplicity Requires Thought — reducing complexity while maintaining functionality needs careful consideration; Testing Validates Decisions — usability testing provided concrete feedback; Business Context Matters — understanding business goals is essential for real-world solutions.</p>
+      <p>This experience strengthened my end-to-end product design approach, from initial research through final implementation, and reinforced my belief in the power of thoughtful, user-centered design.</p>
+ 
+      <hr />
+ 
+      <div style="text-align: center;">
+        <a href="index.html" class="back-to-portfolio">← Back to Portfolio</a>
+      </div>
+    </div>
+  </div>
+ 
+  <footer>
+    © 2025 Rohithsusan · Designed with <span style="color:#c07a5c;">♥</span>
+  </footer>
+ 
+</body>
+</html>

@@ -1,0 +1,14 @@
+*
+!.gitignore
+!README.md
+!Downloads/
+Downloads/*
+!Downloads/Rohithportfolio/
+!Downloads/Rohithportfolio/**
+*
+!.gitignore
+!README.md
+!Downloads/
+Downloads/*
+!Downloads/Rohithportfolio/
+!Downloads/Rohithportfolio/**

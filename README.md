@@ -1,2 +1,12 @@
-# Emc-Tripadvisorclone
-Tripadvisor-inspired travel website clone built using HTML5 and CSS3. Features responsive layout, navigation bar, hero search section, destination cards, and Travellers’ Choice style UI. Focused on Flexbox, Grid, reusable components, and clean modern design principles.
+# Rohith Portfolio
+
+Personal portfolio website for Rohith, showcasing product design work and case studies.
+
+## Project
+
+- Main portfolio page: `Downloads/Rohithportfolio/index.html`
+- Case studies:
+  - `Downloads/Rohithportfolio/arqonz-case-study.html`
+  - `Downloads/Rohithportfolio/icebrekr-case-study.html`
+
+This repository now tracks the portfolio site instead of the older EMC TripAdvisor clone files.

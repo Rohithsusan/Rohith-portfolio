@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rohithsusan – Product Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --bg: #f5f2ed;
+      --text: #3D2F1F;
+      --muted: #7a6a5a;
+      --border: #e2dbd0;
+      --btn-bg: #3D2F1F;
+      --btn-text: #fff;
+      --card-bg: #fff;
+    }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    /* Paragraph styling — smaller, lighter, more breathing room */
+    p {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.85;
+      font-weight: 350;
+      color: #5a4e3a;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      letter-spacing: 0.01em;
+    }
+    
+    /* Spacing improvements across sections */
+    section {
+      padding: 100px 24px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 5vw, 48px);
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 80px;
+      letter-spacing: -0.01em;
+    }
+ 
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      padding: 32px 0;
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 450;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+    }
+    nav a:hover { opacity: 0.55; }
+ 
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 110px 24px 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(52px, 10vw, 80px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      margin-bottom: 24px;
+    }
+    .hero .tagline {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 52px;
+      font-weight: 400;
+    }
+    /* Hero paragraph - EXTRA WIDE */
+    .hero .intro {
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+      font-weight: 350;
+      color: #5a4e3a;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      text-wrap: balance;
+      letter-spacing: 0.01em;
+    }
+ 
+    /* STATS */
+    .stats {
+      display: flex;
+      gap: 28px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 64px auto 0;
+      max-width: 700px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px 32px;
+      min-width: 210px;
+      flex: 1;
+      transition: all 0.2s;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+    .stat-card .label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .stat-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .stat-icon { font-size: 24px; }
+    .stat-value {
+      font-size: 28px;
+      font-weight: 520;
+      font-family: 'Playfair Display', serif;
+    }
+    .stat-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+ 
+    /* WORKED WITH */
+    .worked-with {
+      text-align: center;
+      margin: 72px auto 0;
+      padding-bottom: 80px;
+      border-bottom: 1px solid var(--border);
+      max-width: 1100px;
+    }
+    .worked-with .section-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .worked-tags {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .worked-tag {
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 10px 28px;
+      font-size: 14px;
+      font-weight: 450;
+      background: var(--card-bg);
+      color: #2c2416;
+      letter-spacing: -0.01em;
+    }
+ 
+    /* SELECTED WORK */
+    .work-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+    }
+    .work-item {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 68px;
+      align-items: start;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .work-mockup {
+      background: #1a1a1a;
+      border-radius: 28px;
+      overflow: hidden;
+      aspect-ratio: 9/16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+    }
+    /* Arqonz mockup */
+    .mockup-arqonz {
+      background: linear-gradient(145deg, #0f3d2e 0%, #1a5c44 100%);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 14px;
+      gap: 10px;
+    }
+    .mockup-arqonz .top-bar {
+      background: rgba(255,255,255,0.12);
+      border-radius: 12px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 8px;
+    }
+    .mockup-arqonz .top-bar span {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: rgba(255,255,255,0.55);
+    }
+    .mockup-arqonz .card {
+      background: rgba(255,255,255,0.09);
+      border-radius: 16px;
+      height: 80px;
+      margin: 6px 0;
+    }
+    .mockup-arqonz .row {
+      display: flex; gap: 12px;
+    }
+    .mockup-arqonz .row .card { flex: 1; height: 60px; }
+    .mockup-arqonz .list-item {
+      background: rgba(255,255,255,0.07);
+      border-radius: 12px;
+      height: 32px;
+      margin: 6px 0;
+    }
+ 
+    /* IceBrekr mockup */
+    .mockup-icebrekr {
+      background: linear-gradient(135deg, #19264b 0%, #0c1333 100%);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 18px 14px;
+      gap: 10px;
+    }
+    .mockup-icebrekr .profile-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 10px 12px;
+    }
+    .mockup-icebrekr .avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      flex-shrink: 0;
+    }
+    .mockup-icebrekr .line {
+      height: 10px; border-radius: 8px;
+      background: rgba(255,255,255,0.2);
+      flex: 1;
+    }
+    .mockup-icebrekr .badge {
+      width: 24px; height: 24px; border-radius: 50%;
+      background: #4f8ef7;
+      flex-shrink: 0;
+    }
+    .mockup-icebrekr .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 10px 0;
+    }
+ 
+    .work-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 520;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .work-content p {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.85;
+      font-weight: 350;
+      color: #5a4e3a;
+      margin-bottom: 20px;
+      text-align: left;
+      max-width: 100%;
+    }
+    .platform-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 32px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    .platform-value {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 32px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      color: #1e1910;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 480;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      letter-spacing: 0.02em;
+    }
+    .btn:hover { opacity: 0.85; transform: translateY(-1px); }
+ 
+    /* EXPERTISE */
+    .expertise-section {
+      background: #eeeae3;
+      margin-top: 20px;
+    }
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .expertise-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px 24px;
+      text-align: center;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .expertise-icon { font-size: 36px; margin-bottom: 20px; }
+    .expertise-name {
+      font-size: 16px;
+      font-weight: 510;
+      letter-spacing: -0.01em;
+    }
+ 
+    /* CONTACT */
+    .contact-section {
+      background: var(--bg);
+      padding-top: 90px;
+      padding-bottom: 110px;
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      max-width: 1100px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    .contact-left h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 5vw, 48px);
+      font-weight: 520;
+      line-height: 1.2;
+      margin-bottom: 28px;
+    }
+    .contact-left p {
+      text-align: left;
+      max-width: 480px;
+      margin: 0 0 36px 0;
+      font-size: 15px;
+    }
+    .contact-link {
+      display: block;
+      font-size: 15px;
+      font-weight: 450;
+      color: var(--text);
+      text-decoration: none;
+      margin-bottom: 14px;
+      transition: opacity 0.2s;
+    }
+    .contact-link:hover { text-decoration: underline; opacity: 0.7; }
+ 
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 16px 20px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #ffffff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      outline: none;
+      transition: border 0.2s, box-shadow 0.1s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #b2a088;
+      box-shadow: 0 0 0 2px rgba(61,47,31,0.05);
+    }
+    .contact-form textarea { resize: vertical; min-height: 140px; }
+    .contact-form .btn { align-self: flex-start; background: #3D2F1F; border-radius: 40px; padding: 14px 36px; cursor: pointer; }
+ 
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      letter-spacing: 0.2px;
+    }
+    footer span { color: #c07a5c; }
+ 
+    @media (max-width: 780px) {
+      .work-item { grid-template-columns: 1fr; gap: 44px; }
+      .work-mockup { max-width: 320px; margin: 0 auto; aspect-ratio: 9/16; }
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 60px; }
+      .stats { flex-direction: column; align-items: center; width: 100%; max-width: 380px; margin: 52px auto 0; }
+      .hero { padding: 80px 20px 60px; max-width: 100%; }
+      section { padding: 80px 20px; }
+      .hero .intro { font-size: 15px; max-width: 100%; }
+      p { font-size: 14px; max-width: 100%; }
+      .work-content h3 { font-size: 30px; }
+      .work-content p { font-size: 14px; }
+    }
+    @media (max-width: 480px) {
+      .expertise-grid { grid-template-columns: 1fr; }
+      .worked-tag { padding: 8px 20px; font-size: 12px; }
+      .stat-card { padding: 18px 24px; }
+    }
+  </style>
+</head>
+<body>
+ 
+  <!-- NAV -->
+  <nav>
+    <a href="#" onclick="scrollToTop(); return false;">Home</a>
+    <a href="#work">My Work</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#contact">Contact</a>
+  </nav>
+ 
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Rohithsusan</h1>
+    <p class="tagline">Product Designer</p>
+    <p class="intro">I'm a Product Designer with hands-on experience improving real products across web and mobile. I focus on turning practical business problems into clean, intuitive, and scalable design solutions. My strength is understanding how users think, how businesses operate, and how design can bridge the two. I've worked on multiple real-world projects where clarity, systems thinking, and usability made a measurable impact — and that's the approach I bring to every product I design.</p>
+ 
+    <div class="stats">
+      <div class="stat-card">
+        <div class="label">UX Experience</div>
+        <div class="stat-row">
+          <span class="stat-icon">📊</span>
+          <div>
+            <div class="stat-value">1+ years</div>
+            <div class="stat-sub">Freelancing</div>
+          </div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="label">B2B &amp; Enterprise</div>
+        <div class="stat-row">
+          <span class="stat-icon">🏢</span>
+          <div>
+            <div class="stat-value">10 months</div>
+            <div class="stat-sub">Arqonz Global Pvt Ltd</div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="worked-with">
+      <div class="section-label" style="margin-top:30px;">Worked With</div>
+      <div class="worked-tags">
+        <span class="worked-tag">Arqonz Global Pvt Ltd</span>
+        <span class="worked-tag">IceBrekr</span>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- SELECTED WORK -->
+  <section id="work">
+    <h2 class="section-title">Selected Work</h2>
+    <div class="work-grid">
+ 
+      <!-- Arqonz - Button opens case study page in same tab (home page remains untouched) -->
+      <div class="work-item">
+        <div class="work-mockup">
+          <div class="mockup-arqonz">
+            <div class="top-bar">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="card"></div>
+            <div class="row">
+              <div class="card"></div>
+              <div class="card"></div>
+            </div>
+            <div class="list-item"></div>
+            <div class="list-item"></div>
+            <div class="list-item"></div>
+            <div class="list-item"></div>
+            <div class="list-item"></div>
+            <div class="card"></div>
+          </div>
+        </div>
+        <div class="work-content">
+          <h3>Arqonz Global Pvt Ltd</h3>
+          <p>I worked on Arqonz' website, mobile app, and SaaS platform. This role strengthened my end-to-end product design approach — from brainstorming to ideation, wireframing, design systems, prototyping, and testing. I also attended business meetings to understand client requirements and represented the design team.</p>
+          <p>A major design goal was reducing interaction cost and cognitive load for two different audiences: non-technical users in B2C and well-informed business users in B2B. I redesigned flows to simplify navigation, improve clarity, and ensure the product supported both user types without overwhelming them.</p>
+          <div class="platform-label">Platform</div>
+          <div class="platform-value">Web &amp; Mobile</div>
+          <!-- This button opens arqonz-case-study.html - home page stays as is -->
+          <a href="arqonz-case-study.html" class="btn">Read Full Case Study →</a>
+        </div>
+      </div>
+ 
+      <!-- IceBrekr -->
+      <div class="work-item">
+        <div class="work-mockup">
+          <div class="mockup-icebrekr">
+            <div class="profile-row">
+              <div class="avatar"></div>
+              <div class="line" style="max-width:60%"></div>
+              <div class="badge"></div>
+            </div>
+            <div class="divider"></div>
+            <div class="profile-row">
+              <div class="avatar"></div>
+              <div class="line" style="max-width:70%"></div>
+            </div>
+            <div class="profile-row">
+              <div class="avatar"></div>
+              <div class="line" style="max-width:55%"></div>
+              <div class="badge" style="background:#f7904f"></div>
+            </div>
+            <div class="profile-row">
+              <div class="avatar"></div>
+              <div class="line" style="max-width:65%"></div>
+            </div>
+            <div class="divider"></div>
+            <div class="profile-row">
+              <div class="avatar" style="background:rgba(255,255,255,0.2)"></div>
+              <div class="line" style="max-width:50%"></div>
+              <div class="badge" style="background:#2dd4bf"></div>
+            </div>
+            <div class="profile-row">
+              <div class="avatar" style="background:rgba(255,255,255,0.2)"></div>
+              <div class="line" style="max-width:75%"></div>
+            </div>
+            <div class="profile-row">
+              <div class="avatar" style="background:rgba(255,255,255,0.2)"></div>
+              <div class="line" style="max-width:60%"></div>
+              <div class="badge" style="background:#f472b6"></div>
+            </div>
+            <div class="divider"></div>
+            <div style="background:rgba(255,255,255,0.06);border-radius:16px;height:52px;margin-top:6px;"></div>
+          </div>
+        </div>
+        <div class="work-content">
+          <h3>IceBrekr App</h3>
+          <p>I contributed to IceBrekr, a networking and contact relationship app. I worked on a clean and minimal profile system, QR scanner module, business card scanning, dual account modes (personal &amp; professional), interest-based visibility settings, reminders, and smart contact notes.</p>
+          <p>My focus was simplifying complex modules like scanning, syncing, and follow-up reminders into easy-to-understand flows.</p>
+          <div class="platform-label">Platform</div>
+          <div class="platform-value">Mobile</div>
+          <a href="icebrekr-case-study.html" class="btn">Read Full Case Study →</a>
+        </div>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  <!-- EXPERTISE -->
+  <section id="expertise" class="expertise-section">
+    <h2 class="section-title">Technical &amp; Design Expertise</h2>
+    <div class="expertise-grid">
+      <div class="expertise-card">
+        <div class="expertise-icon">🎨</div>
+        <div class="expertise-name">UI/UX</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">📐</div>
+        <div class="expertise-name">Wireframing</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">⚡</div>
+        <div class="expertise-name">Prototyping</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🔧</div>
+        <div class="expertise-name">Design Systems</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">✨</div>
+        <div class="expertise-name">Branding</div>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">📱</div>
+        <div class="expertise-name">Meta Ads</div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h2>Let's create something together</h2>
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        <a href="mailto:rohithsusan@gmail.com" class="contact-link">rohithsusan@gmail.com</a>
+        <a href="#" class="contact-link" target="_blank">LinkedIn</a>
+      </div>
+      <form class="contact-form" onsubmit="return false;">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Your email" />
+        <textarea placeholder="Your message"></textarea>
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+ 
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Rohithsusan · Designed &amp; Developed with <span>♥</span>
+  </footer>
+ 
+  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    // Optional: Add a small note that clicking Arqonz button opens a new page
+    console.log('Home page ready — Arqonz button links to arqonz-case-study.html');
+  </script>
+ 
+</body>
+</html>
